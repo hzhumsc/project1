@@ -13,4 +13,6 @@ def compute_mse(y, tx, w):
 
 def compute_gradient(y, tx, w):
     '''compute the gradient'''
-    
+    N = tx.shape[0]
+    e = y - np.dot(tx, w)
+    return -(1/N)*np.dot(tx.T, e)
